@@ -289,6 +289,9 @@ public partial class MediaManager : IDisposable
 
 		if (PlayerItem is not null && PlayerItem.Error is null)
 		{
+			PlayerItem.PreferredPeakBitRate = 320000;
+			PlayerItem.PreferredPeakBitRateForExpensiveNetworks = 320000;
+			
 			MediaElement.MediaOpened();
 
 			(MediaElement.MediaWidth, MediaElement.MediaHeight) = GetVideoDimensions(PlayerItem);
